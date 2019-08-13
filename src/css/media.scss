@@ -48,7 +48,8 @@
 
 				.owl-carouselImgPhone {
 					&:after {
-						display: none;
+						bottom: -14px;
+						right: 10px;
 					}
 				}
 			}

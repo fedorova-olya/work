@@ -27,7 +27,8 @@
           width: 100%;
           height: auto; }
         .blockYellow .headerSection .owl-carousel .owl-carouselImgPhone:after {
-          display: none; } }
+          bottom: -14px;
+          right: 10px; } }
 
 @media (min-width: 200px) and (max-width: 767.98px) {
   .blockYellow {
