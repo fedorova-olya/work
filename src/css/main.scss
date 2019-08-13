@@ -20,6 +20,8 @@ body {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    font-family: 'Roboto',
+        sans-serif;
 
 }
 
@@ -36,6 +38,69 @@ body {
     margin-top: 15px;
     border-radius: 3px;
     box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+@mixin title {
+    display: inline-block;
+    color: #fff;
+    background: #464646;
+    padding: 11px 92px;
+    border-radius: 3px;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro',
+        sans-serif;
+    font-weight: 700;
+    margin: 140px 0 180px;
+    box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+@mixin titleBefore {
+    display: inline-block;
+    content: "";
+    width: 56px;
+    height: 96px;
+    background: url('../../build/img/Shape_2.png') no-repeat;
+    margin-left: 10px;
+    position: absolute;
+    top: 24px;
+    right: -71px;
+
+
+}
+
+@mixin titleAfter {
+    content: "";
+    width: 34px;
+    height: 24px;
+    background: url('../../build/img/send_black.png') no-repeat;
+    position: absolute;
+    top: 117px;
+    right: -24px;
+    transform: rotateY(178deg);
+}
+
+@mixin title_before_after {
+    p {
+        @include title();
+        margin: 85px 0 150px;
+
+        &:before {
+            @include titleBefore();
+            right: 0;
+            left: -82px;
+            transform: rotateY(178deg);
+        }
+
+        &::after {
+            @include titleAfter();
+            right: 0;
+            left: -24px;
+            transform: rotate3d(0, 0, 0, 0deg);
+
+        }
+    }
 }
 
 
@@ -96,6 +161,7 @@ body {
 
     .headerSection {
         @include wrapper();
+
 
         .block {
             width: 40%;
@@ -187,50 +253,21 @@ body {
 
 main {
     @include wrapper();
-    font-family: 'Roboto',
-        sans-serif;
+    display: block;
+
 
     .mainSection1 {
         text-align: center;
 
         .title {
-            display: inline-block;
-            color: #fff;
-            background: #464646;
-            padding: 11px 92px;
-            border-radius: 3px;
-            font-size: 26px;
-            text-transform: uppercase;
-            font-family: 'Source Sans Pro',
-                sans-serif;
-            font-weight: 700;
-            margin: 140px 0 180px;
-            box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.25);
-            position: relative;
+            @include title();
 
             &:before {
-                display: inline-block;
-                content: "";
-                width: 56px;
-                height: 96px;
-                background: url('../../build/img/Shape_2.png') no-repeat;
-                margin-left: 10px;
-                position: absolute;
-                top: 24px;
-                right: -71px;
-
-
+                @include titleBefore();
             }
 
             &::after {
-                content: "";
-                width: 34px;
-                height: 24px;
-                background: url('../../build/img/send_black.png') no-repeat;
-                position: absolute;
-                top: 117px;
-                right: -24px;
-                transform: rotate3d(0, 4, 0, 197deg);
+                @include titleAfter();
             }
         }
 
@@ -285,6 +322,206 @@ main {
         .blockText {
             padding: 0 0 0 97px;
             order: 1;
+        }
+    }
+}
+
+
+.sectionContent {
+    background: repeating-linear-gradient(-45deg, #fcfcfc, #fcfcfc 7px, #f9f9f9 5px, #f9f9f9 9px) fixed;
+
+    .sectionContent__block {
+        @include wrapper();
+        display: block;
+        text-align: center;
+
+
+        p {
+            @include title();
+            margin: 85px 0 150px;
+
+            &:before {
+                @include titleBefore();
+                right: 0;
+                left: -82px;
+                transform: rotateY(178deg);
+            }
+
+            &::after {
+                @include titleAfter();
+                right: 0;
+                left: -24px;
+                transform: rotate3d(0, 0, 0, 0deg);
+
+            }
+
+
+        }
+
+    }
+
+    .sectionContent__block_background {
+        padding: 430px 0;
+        background: url('../../build/img/Vector_Smart_Object.png') no-repeat;
+    }
+}
+
+.sectionFeatures {
+    @include wrapper();
+    display: block;
+    text-align: center;
+
+    .title {
+        text-align: center;
+        @include title();
+        margin: 130px 0;
+        padding: 12px 78px;
+
+
+        &:before {
+            @include titleBefore();
+        }
+
+        &::after {
+            @include titleAfter();
+        }
+    }
+
+    .sectionFeatures__block {
+        @include wrapper();
+        flex-wrap: wrap;
+        text-align: left;
+
+        article {
+            width: 30%;
+            padding-left: 35px;
+            margin: 30px 0;
+
+            h4 {
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 25px;
+                color: #3a3a3a;
+                font-weight: 400;
+                position: relative;
+
+                &:before {
+                    content: "";
+                    width: 31px;
+                    height: 31px;
+                    background: url('../../build/img/cropping4.svg') no-repeat;
+                    position: absolute;
+                    top: 5px;
+                    left: -35px;
+                }
+            }
+
+            p {
+                color: #636363;
+                font-weight: 300;
+            }
+        }
+
+        article+article {
+            h4 {
+                &:before {
+                    background: url('../../build/img/lcd.svg') no-repeat;
+
+                }
+            }
+        }
+
+        article+article+article {
+            h4 {
+                &:before {
+                    width: 35px;
+                    background: url('../../build/img/notebook.svg') no-repeat;
+                    left: -38px;
+
+                }
+            }
+        }
+
+        article+article+article+article {
+            h4 {
+                &:before {
+                    background: url('../../build/img/pencil.svg') no-repeat;
+
+                }
+            }
+        }
+
+        article+article+article+article+article {
+            h4 {
+                &:before {
+                    background: url('../../build/img/wallet.svg') no-repeat;
+
+                }
+            }
+        }
+
+        article+article+article+article+article+article {
+            h4 {
+                &:before {
+                    background: url('../../build/img/hand2.svg') no-repeat;
+
+                }
+            }
+        }
+
+        article+article+article+article+article+article+article {
+            h4 {
+                &:before {
+                    background: url('../../build/img/globe32.svg') no-repeat;
+
+                }
+            }
+        }
+
+        article+article+article+article+article+article+article+article {
+            h4 {
+                &:before {
+                    background: url('../../build/img/cropping4.svg') no-repeat;
+
+                }
+            }
+        }
+
+        article+article+article+article+article+article+article+article+article {
+            h4 {
+                &:before {
+                    background: url('../../build/img/bag.svg') no-repeat;
+
+                }
+            }
+        }
+
+        article+article+article+article+article+article+article+article+article+article {
+            h4 {
+                &:before {
+                    background: url('../../build/img/dish.svg') no-repeat;
+
+                }
+            }
+        }
+
+        article+article+article+article+article+article+article+article+article+article+article {
+            h4 {
+                &:before {
+                    background: url('../../build/img/wealth.svg') no-repeat;
+
+                }
+            }
+        }
+
+        article+article+article+article+article+article+article+article+article+article+article+article {
+            h4 {
+                &:before {
+                    background: url('../../build/img/soft.svg') no-repeat;
+                    left: -30px;
+
+                }
+            }
         }
     }
 }

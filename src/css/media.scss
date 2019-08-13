@@ -4,6 +4,16 @@
 	display: block;
 }
 
+@mixin wrapper {
+	width: 993px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Roboto',
+		sans-serif;
+
+}
+
 @mixin btn {
 	color: #464646;
 	background: #ffc038;
@@ -22,6 +32,48 @@
 	font-weight: 400;
 	text-decoration: none;
 }
+
+@mixin title {
+	display: inline-block;
+	color: #fff;
+	background: #464646;
+	padding: 11px 92px;
+	border-radius: 3px;
+	font-size: 26px;
+	text-transform: uppercase;
+	font-family: 'Source Sans Pro',
+		sans-serif;
+	font-weight: 700;
+	margin: 140px 0 180px;
+	box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.25);
+	position: relative;
+}
+
+@mixin titleBefore {
+	display: inline-block;
+	content: "";
+	width: 56px;
+	height: 96px;
+	background: url('../../build/img/Shape_2.png') no-repeat;
+	margin-left: 10px;
+	position: absolute;
+	top: 24px;
+	right: -71px;
+
+
+}
+
+@mixin titleAfter {
+	content: "";
+	width: 34px;
+	height: 24px;
+	background: url('../../build/img/send_black.png') no-repeat;
+	position: absolute;
+	top: 117px;
+	right: -24px;
+	transform: rotateY(178deg);
+}
+
 
 
 @media (min-width: 768px) and (max-width: 992.98px) {
@@ -140,6 +192,46 @@
 		.mainSection1__block+.mainSection1__block+.mainSection1__block {
 			.blockText {
 				padding: 0 8px;
+			}
+		}
+	}
+
+	.sectionContent {
+		width: 100%;
+		background-size: cover;
+
+		.sectionContent__block {
+			width: 100%;
+
+
+			.sectionContent__block_background {
+				background-size: contain;
+			}
+		}
+	}
+
+	.sectionFeatures {
+		width: 100%;
+
+
+		.title {
+			margin: 13px 0 12px;
+
+			&:before {
+				display: none;
+			}
+
+			&::after {
+				display: none;
+			}
+		}
+
+		.sectionFeatures__block {
+			width: 100%;
+
+			article {
+				width: 45%;
+				margin: 30px 11px;
 			}
 		}
 	}
@@ -305,6 +397,38 @@
 		.mainSection1__block+.mainSection1__block+.mainSection1__block {
 			.blockText {
 				padding: 0 8px;
+			}
+		}
+	}
+
+
+	.sectionContent {
+		display: none;
+	}
+
+	.sectionFeatures {
+		@include wrap();
+		display: block;
+		text-align: center;
+
+		.title {
+			margin: 13px 0 12px;
+
+			&:before {
+				display: none;
+			}
+
+			&::after {
+				display: none;
+			}
+		}
+
+		.sectionFeatures__block {
+			@include wrap();
+
+			article {
+				width: 93%;
+				margin: 30px 11px;
 			}
 		}
 	}
