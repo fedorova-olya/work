@@ -1,3 +1,29 @@
+@mixin wrap {
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+}
+
+@mixin btn {
+	color: #464646;
+	background: #ffc038;
+	padding: 17px 37px;
+	margin-top: 15px;
+	border-radius: 3px;
+	box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+@mixin a {
+	display: inline-block;
+	color: #fdfcfc;
+	font-family: 'Roboto',
+		sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+
 @media (min-width: 768px) and (max-width: 992.98px) {
 	.blockYellow {
 		padding: 30px 0 58px;
@@ -21,7 +47,7 @@
 			.block {
 				color: #fdfcfc;
 				width: 40%;
-				margin-top: 20px;
+				margin: 20px 0 0 10px;
 
 				h2 {
 					font-size: 30px;
@@ -33,7 +59,7 @@
 
 				>p {
 
-					padding-right: 0;
+					padding: 0;
 				}
 			}
 
@@ -52,6 +78,68 @@
 						right: 10px;
 					}
 				}
+			}
+		}
+	}
+
+	main {
+		@include wrap();
+		font-family: 'Roboto',
+			sans-serif;
+
+		.mainSection1 {
+			text-align: center;
+
+			.title {
+				margin: 25px 0 120px;
+			}
+
+		}
+
+		.mainSection1__block {
+			margin: 0 0 20px 0;
+
+			.blockImg {
+				width: 50%;
+				margin-top: 20px;
+
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			.blockText {
+				width: 50%;
+				text-align: center;
+				padding: 0 8px;
+
+				h3 {
+					font-size: 18px;
+					font-weight: 700;
+					text-transform: uppercase;
+					color: #252525;
+				}
+
+				a {
+					@include a();
+					@include btn();
+					margin-bottom: 27px;
+
+				}
+			}
+		}
+
+		.mainSection1__block+.mainSection1__block {
+			.blockText {
+				padding: 0 8px;
+			}
+		}
+
+		.mainSection1__block+.mainSection1__block+.mainSection1__block {
+			.blockText {
+				padding: 0 8px;
 			}
 		}
 	}
@@ -147,6 +235,76 @@
 						display: none;
 					}
 				}
+			}
+		}
+	}
+
+	main {
+		@include wrap();
+		font-family: 'Roboto',
+			sans-serif;
+
+		.mainSection1 {
+			text-align: center;
+
+			.title {
+				margin: 25px 0 20px;
+
+				&:before {
+					display: none;
+
+
+				}
+
+				&::after {
+					display: none;
+				}
+			}
+
+		}
+
+		.mainSection1__block {
+			@include wrap();
+			margin-top: 0px;
+
+			.blockImg {
+				width: 100%;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			.blockText {
+				width: 100%;
+				text-align: center;
+				padding: 0 8px;
+				;
+
+				h3 {
+
+					margin: 20px 0;
+				}
+
+				a {
+					@include a();
+					@include btn();
+					margin-bottom: 27px;
+
+				}
+			}
+		}
+
+		.mainSection1__block+.mainSection1__block {
+			.blockText {
+				padding: 0 8px;
+			}
+		}
+
+		.mainSection1__block+.mainSection1__block+.mainSection1__block {
+			.blockText {
+				padding: 0 8px;
 			}
 		}
 	}
