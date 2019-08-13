@@ -1,0 +1,170 @@
+body {
+    font-size: 14px;
+    color: #363636;
+    font-family: 'Roboto',
+        sans-serif;
+    font-weight: 300;
+}
+
+@mixin a {
+    display: inline-block;
+    color: #fdfcfc;
+    font-family: 'Roboto',
+        sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+
+
+
+.blockYellow {
+    background: #ffc038;
+    font-family: 'Roboto',
+        sans-serif;
+    padding: 88px 0 58px 0;
+
+
+    .headerBody {
+        width: 993px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        color: #464646;
+        padding-bottom: 89px;
+
+        h1 {
+            width: 40%;
+            font-family: 'Roboto',
+                sans-serif;
+            font-weight: 900;
+            font-size: 26px;
+            text-transform: uppercase;
+
+            span {
+                color: #fdfcfc;
+                border: 3px solid #fff200;
+                padding: 1px 17px;
+            }
+
+        }
+
+        nav {
+            width: 60%;
+
+            ul {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                li {
+                    text-align: center;
+
+                    a {
+                        @include a();
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        color: #464646;
+
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
+    .headerSection {
+        display: flex;
+        width: 993px;
+        margin: 0 auto;
+
+        .block {
+            width: 40%;
+            color: #fdfcfc;
+            position: relative;
+
+            &::before {
+                content: "";
+                width: 376px;
+                height: 51px;
+                background: url('../../build/img/Shape_1.png') no-repeat;
+                position: absolute;
+                top: -12px;
+                right: -250px;
+            }
+
+            &::after {
+                content: "";
+                width: 34px;
+                height: 24px;
+                background: url('../../build/img/send_black.png') no-repeat;
+                position: absolute;
+                top: 12px;
+                right: -277px;
+            }
+
+            h2 {
+                font-size: 40px;
+                font-weight: 700;
+                text-transform: uppercase;
+                height: 105px;
+
+                p {
+                    font-size: 38px;
+                    line-height: 55px;
+                }
+
+            }
+
+            >p {
+                line-height: 30px;
+                font-size: 16px;
+                font-weight: 300;
+                padding-right: 30px;
+            }
+        }
+
+        .owl-carousel {
+            width: 60%;
+            margin-top: 50px;
+            order: 1;
+
+            img {
+                max-height: 365px;
+            }
+
+            .owl-carouselImgPhone {
+                &:after {
+                    content: "";
+                    width: 177px;
+                    height: 307px;
+                    background: url('../../build/img/MObile.png') no-repeat;
+                    position: absolute;
+                    bottom: 18px;
+                    right: 0;
+                }
+            }
+        }
+
+        a.btn {
+            @include a();
+            background: #464646;
+            padding: 15px 19px 15px 19px;
+            margin-top: 30px;
+            border-radius: 3px;
+            box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.25);
+
+            &:after {
+                display: inline-block;
+                content: "";
+                width: 27px;
+                height: 19px;
+                background: url('../../build/img/send_white.png') no-repeat;
+                margin-left: 10px;
+            }
+        }
+    }
+}

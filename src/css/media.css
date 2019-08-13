@@ -1,0 +1,86 @@
+@media (min-width: 768px) and (max-width: 992.98px) {
+  .blockYellow {
+    padding: 30px 0 58px; }
+    .blockYellow .headerBody {
+      width: 100%;
+      padding: 0 10px 30px 10px; }
+      .blockYellow .headerBody h1 {
+        width: 30%; }
+      .blockYellow .headerBody nav {
+        width: 70%; }
+    .blockYellow .headerSection {
+      width: 100%; }
+      .blockYellow .headerSection .block {
+        color: #fdfcfc;
+        width: 40%;
+        margin-top: 20px; }
+        .blockYellow .headerSection .block h2 {
+          font-size: 30px; }
+          .blockYellow .headerSection .block h2 p {
+            font-size: 30px; }
+        .blockYellow .headerSection .block > p {
+          padding-right: 0; }
+      .blockYellow .headerSection .owl-carousel {
+        margin-top: 75px;
+        width: 60%; }
+        .blockYellow .headerSection .owl-carousel img {
+          width: 100%;
+          height: auto; }
+        .blockYellow .headerSection .owl-carousel .owl-carouselImgPhone:after {
+          display: none; } }
+
+@media (min-width: 200px) and (max-width: 767.98px) {
+  .blockYellow {
+    padding: 30px 0 58px; }
+    .blockYellow .headerBody {
+      width: 100%;
+      display: block;
+      text-align: center;
+      padding-bottom: 0; }
+      .blockYellow .headerBody h1 {
+        display: inline;
+        font-size: 26px;
+        margin: 0 auto; }
+      .blockYellow .headerBody nav {
+        width: 100%;
+        margin-top: 25px; }
+        .blockYellow .headerBody nav ul {
+          font-size: 0;
+          display: block; }
+          .blockYellow .headerBody nav ul li {
+            display: block;
+            font-size: 14px;
+            text-align: center;
+            margin: 5px 0; }
+            .blockYellow .headerBody nav ul li a {
+              display: inline-block;
+              border-bottom: 2px solid #464646;
+              padding: 0 15px 5px 15px; }
+    .blockYellow .headerSection {
+      width: 100%;
+      display: block; }
+      .blockYellow .headerSection .block {
+        color: #fdfcfc;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px; }
+        .blockYellow .headerSection .block::before {
+          display: none; }
+        .blockYellow .headerSection .block::after {
+          display: none; }
+        .blockYellow .headerSection .block h2 {
+          font-size: 35px; }
+          .blockYellow .headerSection .block h2 p {
+            font-size: 35px; }
+        .blockYellow .headerSection .block > p {
+          padding-right: 0; }
+      .blockYellow .headerSection .owl-carousel {
+        margin-top: 50px;
+        width: 100%; }
+        .blockYellow .headerSection .owl-carousel img {
+          width: 100%;
+          height: auto; }
+        .blockYellow .headerSection .owl-carousel .owl-carouselImgPhone:after {
+          display: none; } }
+
+/*# sourceMappingURL=media.css.map */
