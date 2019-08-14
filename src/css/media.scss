@@ -1,78 +1,4 @@
-@mixin wrap {
-	width: 100%;
-	margin: 0 auto;
-	display: block;
-}
-
-@mixin wrapper {
-	width: 993px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	font-family: 'Roboto',
-		sans-serif;
-
-}
-
-@mixin btn {
-	color: #464646;
-	background: #ffc038;
-	padding: 17px 37px;
-	margin-top: 15px;
-	border-radius: 3px;
-	box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.25);
-}
-
-@mixin a {
-	display: inline-block;
-	color: #fdfcfc;
-	font-family: 'Roboto',
-		sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	text-decoration: none;
-}
-
-@mixin title {
-	display: inline-block;
-	color: #fff;
-	background: #464646;
-	padding: 11px 92px;
-	border-radius: 3px;
-	font-size: 26px;
-	text-transform: uppercase;
-	font-family: 'Source Sans Pro',
-		sans-serif;
-	font-weight: 700;
-	margin: 140px 0 180px;
-	box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.25);
-	position: relative;
-}
-
-@mixin titleBefore {
-	display: inline-block;
-	content: "";
-	width: 56px;
-	height: 96px;
-	background: url('../../build/img/Shape_2.png') no-repeat;
-	margin-left: 10px;
-	position: absolute;
-	top: 24px;
-	right: -71px;
-
-
-}
-
-@mixin titleAfter {
-	content: "";
-	width: 34px;
-	height: 24px;
-	background: url('../../build/img/send_black.png') no-repeat;
-	position: absolute;
-	top: 117px;
-	right: -24px;
-	transform: rotateY(178deg);
-}
+@import '_mixin';
 
 
 
@@ -206,6 +132,7 @@
 
 			.sectionContent__block_background {
 				background-size: contain;
+				padding: 345px 0;
 			}
 		}
 	}
@@ -217,13 +144,8 @@
 		.title {
 			margin: 13px 0 12px;
 
-			&:before {
-				display: none;
-			}
+			@include none();
 
-			&::after {
-				display: none;
-			}
 		}
 
 		.sectionFeatures__block {
@@ -234,6 +156,77 @@
 				margin: 30px 11px;
 			}
 		}
+	}
+
+	.sectionPrice {
+		width: 100%;
+		text-align: center,
+			sans-serif;
+
+		p {
+			margin: 13px 0 12px;
+			@include none();
+
+		}
+
+
+		.sectionPrice__Block {
+			justify-content: space-around;
+
+			ul {
+				width: 45%;
+				margin-top: 30px;
+				padding: 0 25px;
+			}
+
+			.priceTitleBasic {
+				li {
+					border-right: none;
+
+					&:last-child {
+						padding-top: 15px;
+					}
+				}
+			}
+
+			.priceTitleStandart {
+
+				li {
+
+
+					&:first-child {
+						margin-top: 0px;
+					}
+				}
+			}
+
+			.priceTitlePremium {
+				order: -1;
+
+				li {
+					border-left: none;
+				}
+			}
+
+			.sectionPrice__Block2 {
+				flex-wrap: wrap;
+				justify-content: space-around;
+				margin: 40px 0;
+
+				.basicImput,
+				.standartImput {
+					width: 45%;
+
+				}
+
+				.ptemiumImput {
+					width: 45%;
+					order: -1;
+					;
+				}
+			}
+		}
+
 	}
 }
 
@@ -292,13 +285,8 @@
 				text-align: center;
 				margin-top: 20px;
 
-				&::before {
-					display: none;
-				}
+				@include none();
 
-				&::after {
-					display: none;
-				}
 
 				h2 {
 					font-size: 35px;
@@ -342,15 +330,8 @@
 			.title {
 				margin: 25px 0 20px;
 
-				&:before {
-					display: none;
+				@include none();
 
-
-				}
-
-				&::after {
-					display: none;
-				}
 			}
 
 		}
@@ -414,13 +395,8 @@
 		.title {
 			margin: 13px 0 12px;
 
-			&:before {
-				display: none;
-			}
+			@include none();
 
-			&::after {
-				display: none;
-			}
 		}
 
 		.sectionFeatures__block {
@@ -431,5 +407,73 @@
 				margin: 30px 11px;
 			}
 		}
+	}
+
+	.sectionPrice {
+		width: 100%;
+		text-align: center,
+			sans-serif;
+
+		p {
+			margin: 13px 0 12px;
+			@include none();
+
+		}
+
+
+		.sectionPrice__Block {
+
+
+			ul {
+				width: 100%;
+				margin-top: 30px;
+				padding: 0 25px;
+			}
+
+			.priceTitleBasic {
+				li {
+					border-right: none;
+
+					&:last-child {
+						padding-top: 15px;
+					}
+				}
+			}
+
+			.priceTitleStandart {
+				li {
+
+
+					&:first-child {
+						margin-top: 0px;
+					}
+				}
+			}
+
+			.priceTitlePremium {
+				li {
+					border-left: none;
+				}
+			}
+
+			.sectionPrice__Block2 {
+				flex-wrap: wrap;
+				justify-content: space-around;
+				margin: 40px 0;
+
+				.basicImput,
+				.standartImput {
+					width: 45%;
+
+				}
+
+				.ptemiumImput {
+					width: 45%;
+					order: -1;
+					;
+				}
+			}
+		}
+
 	}
 }

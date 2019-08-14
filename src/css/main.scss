@@ -1,107 +1,11 @@
+@import '_mixin';
+
 body {
     font-size: 14px;
     color: #363636;
-
     font-weight: 300;
 }
 
-@mixin a {
-    display: inline-block;
-    color: #fdfcfc;
-    font-family: 'Roboto',
-        sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    text-decoration: none;
-}
-
-@mixin wrapper {
-    width: 993px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Roboto',
-        sans-serif;
-
-}
-
-@mixin wrap {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-}
-
-@mixin btn {
-    color: #464646;
-    background: #ffc038;
-    padding: 17px 37px;
-    margin-top: 15px;
-    border-radius: 3px;
-    box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.25);
-}
-
-@mixin title {
-    display: inline-block;
-    color: #fff;
-    background: #464646;
-    padding: 11px 92px;
-    border-radius: 3px;
-    font-size: 26px;
-    text-transform: uppercase;
-    font-family: 'Source Sans Pro',
-        sans-serif;
-    font-weight: 700;
-    margin: 140px 0 180px;
-    box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.25);
-    position: relative;
-}
-
-@mixin titleBefore {
-    display: inline-block;
-    content: "";
-    width: 56px;
-    height: 96px;
-    background: url('../../build/img/Shape_2.png') no-repeat;
-    margin-left: 10px;
-    position: absolute;
-    top: 24px;
-    right: -71px;
-
-
-}
-
-@mixin titleAfter {
-    content: "";
-    width: 34px;
-    height: 24px;
-    background: url('../../build/img/send_black.png') no-repeat;
-    position: absolute;
-    top: 117px;
-    right: -24px;
-    transform: rotateY(178deg);
-}
-
-@mixin title_before_after {
-    p {
-        @include title();
-        margin: 85px 0 150px;
-
-        &:before {
-            @include titleBefore();
-            right: 0;
-            left: -82px;
-            transform: rotateY(178deg);
-        }
-
-        &::after {
-            @include titleAfter();
-            right: 0;
-            left: -24px;
-            transform: rotate3d(0, 0, 0, 0deg);
-
-        }
-    }
-}
 
 
 
@@ -361,7 +265,7 @@ main {
     }
 
     .sectionContent__block_background {
-        padding: 430px 0;
+        padding: 470px 0;
         background: url('../../build/img/Vector_Smart_Object.png') no-repeat;
     }
 }
@@ -374,7 +278,7 @@ main {
     .title {
         text-align: center;
         @include title();
-        margin: 130px 0;
+        margin: 90px 0 130px;
         padding: 12px 78px;
 
 
@@ -419,6 +323,7 @@ main {
             p {
                 color: #636363;
                 font-weight: 300;
+                font-size: 14px;
             }
         }
 
@@ -524,4 +429,132 @@ main {
             }
         }
     }
+}
+
+.sectionPrice {
+    width: 993px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Roboto',
+        sans-serif;
+    @include title_before_after();
+
+    .sectionPrice__Block {
+        display: flex;
+        flex-wrap: wrap;
+
+        ul {
+            width: 33%;
+
+            li {
+                font-size: 16px;
+                font-weight: 500;
+                color: #b3b3b3;
+                vertical-align: baseline;
+                padding: 15px 0;
+            }
+        }
+
+        .priceTitleBasic {
+            li {
+                border-bottom: 2px solid #ffbf37;
+                border-right: 2px solid #ffbf37;
+
+                span {
+                    font-size: 25px;
+                }
+
+                &:first-child {
+                    color: #8d8d8d;
+                    font-size: 23px;
+                    font-weight: 400;
+                }
+
+                &:last-child {
+                    font-size: 35px;
+                    padding-top: 50px;
+                    border-bottom: none;
+                }
+            }
+        }
+
+        .priceTitleStandart {
+            li {
+                color: #000;
+                border-bottom: 2px solid #ffbf37;
+
+                span {
+                    font-size: 20px;
+                }
+
+                &:first-child {
+                    color: #f26c4f;
+                    font-size: 27px;
+                    font-weight: 400;
+                    margin-top: -14px;
+                    padding: 0 0 40px 0;
+                }
+
+                &:last-child {
+                    font-size: 68px;
+                    color: #f26c4f;
+                    border-bottom: none;
+                }
+            }
+        }
+
+        .priceTitlePremium {
+            li {
+                border-bottom: 2px solid #ffbf37;
+                border-left: 2px solid #ffbf37;
+
+                span {
+                    font-size: 25px;
+                }
+
+                &:first-child {
+                    color: #fbc73a;
+                    font-size: 23px;
+                    font-weight: 400;
+                }
+
+                &:last-child {
+                    font-size: 35px;
+                    color: #efb415;
+                    padding-top: 50px;
+                    border-bottom: none;
+                }
+            }
+        }
+
+        .sectionPrice__Block2 {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+
+            .basicImput {
+                @include priceImput();
+                background: #a5a5a5;
+            }
+
+            .standartImput {
+                background: #f26c4f;
+                font-size: 17px;
+                font-weight: 400;
+                padding: 17px 57px;
+                border-radius: 3px;
+                text-decoration: none;
+                color: #fff;
+                text-transform: uppercase;
+            }
+
+            .ptemiumImput {
+                @include priceImput();
+                background: #ffc038;
+                ;
+            }
+        }
+    }
+
 }
