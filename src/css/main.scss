@@ -547,6 +547,7 @@ main {
                 text-decoration: none;
                 color: #fff;
                 text-transform: uppercase;
+                box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
             }
 
             .ptemiumImput {
@@ -554,6 +555,43 @@ main {
                 background: #ffc038;
                 ;
             }
+        }
+    }
+
+}
+
+.sectionHistory {
+    @include wrapper();
+    padding: 65px 0;
+
+    .sectionHistory__bloc {
+        background: #fff;
+        padding: 20px;
+    }
+
+    .sectionHistory__block2 {
+        margin-left: 20px;
+
+        p.title {
+            @include title();
+            margin: 0;
+            padding: 15px 32px;
+        }
+
+        p.title+p {
+            padding: 20px 0;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 30px;
+        }
+
+        a {
+            @include a();
+            @include btn();
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #3a3a3a;
         }
     }
 
