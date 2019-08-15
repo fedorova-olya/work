@@ -96,6 +96,24 @@
     }
 }
 
+@mixin title_before_after_right {
+    .title {
+        text-align: center;
+        @include title();
+        margin: 90px auto 130px;
+        padding: 12px 78px;
+
+
+        &:before {
+            @include titleBefore();
+        }
+
+        &::after {
+            @include titleAfter();
+        }
+    }
+}
+
 @mixin priceImput {
     text-decoration: none;
     font-size: 15px;

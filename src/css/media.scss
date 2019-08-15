@@ -60,67 +60,67 @@
 		}
 	}
 
-	main {
+
+
+	.section1 {
 		@include wrap();
 		font-family: 'Roboto',
 			sans-serif;
+		text-align: center;
 
-		.mainSection1 {
+		.title {
+			margin: 25px 0 120px;
+		}
+
+	}
+
+	.section1__block {
+		margin: 0 10px 20px;
+
+		.blockImg {
+			width: 50%;
+			margin-top: 20px;
+
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.blockText {
+			width: 50%;
 			text-align: center;
+			padding: 0 15px;
 
-			.title {
-				margin: 25px 0 120px;
+			h3 {
+				font-size: 18px;
+				font-weight: 700;
+				text-transform: uppercase;
+				color: #252525;
 			}
 
-		}
+			a {
+				@include a();
+				@include btn();
+				margin-bottom: 27px;
 
-		.mainSection1__block {
-			margin: 0 0 20px 0;
-
-			.blockImg {
-				width: 50%;
-				margin-top: 20px;
-
-
-				img {
-					width: 100%;
-					height: auto;
-				}
-			}
-
-			.blockText {
-				width: 50%;
-				text-align: center;
-				padding: 0 8px;
-
-				h3 {
-					font-size: 18px;
-					font-weight: 700;
-					text-transform: uppercase;
-					color: #252525;
-				}
-
-				a {
-					@include a();
-					@include btn();
-					margin-bottom: 27px;
-
-				}
-			}
-		}
-
-		.mainSection1__block+.mainSection1__block {
-			.blockText {
-				padding: 0 8px;
-			}
-		}
-
-		.mainSection1__block+.mainSection1__block+.mainSection1__block {
-			.blockText {
-				padding: 0 8px;
 			}
 		}
 	}
+
+	.section1__block+.section1__block {
+		.blockText {
+			padding: 0 8px;
+		}
+	}
+
+	.section1__block+.section1__block+.section1__block {
+		.blockText {
+			padding: 0 8px;
+		}
+	}
+
 
 	.sectionContent {
 		width: 100%;
@@ -131,8 +131,8 @@
 
 
 			.sectionContent__block_background {
-				background-size: contain;
-				padding: 345px 0;
+				background-size: 100%;
+				padding: 420px 0;
 			}
 		}
 	}
@@ -142,10 +142,7 @@
 
 
 		.title {
-			margin: 13px 0 12px;
-
-			@include none();
-
+			margin: 13px 0 80px;
 		}
 
 		.sectionFeatures__block {
@@ -164,8 +161,8 @@
 			sans-serif;
 
 		p {
-			margin: 13px 0 12px;
-			@include none();
+			margin: 13px 0 80px;
+
 
 		}
 
@@ -205,30 +202,95 @@
 
 				li {
 					border-left: none;
+
+					&:last-child {
+						padding-top: 15px;
+					}
+
+				}
+
+				.sectionPrice__Block2 {
+					flex-wrap: wrap;
+					justify-content: space-around;
+					margin: 40px 0;
+
+					.basicImput,
+					.standartImput {
+						width: 45%;
+
+					}
+
+					.ptemiumImput {
+						width: 45%;
+						order: -1;
+						;
+					}
 				}
 			}
 
-			.sectionPrice__Block2 {
-				flex-wrap: wrap;
-				justify-content: space-around;
-				margin: 40px 0;
+		}
+	}
 
-				.basicImput,
-				.standartImput {
-					width: 45%;
+	.sectionPrice+.sectionContent {
 
+		.sectionHistory {
+			@include wrap();
+			padding: 25px 10px;
+
+			.sectionHistory__bloc {
+				width: 100%;
+				padding: 10px;
+
+				img {
+					width: 100%;
+					height: auto;
 				}
+			}
 
-				.ptemiumImput {
-					width: 45%;
-					order: -1;
-					;
-				}
+			.sectionHistory__block2 {
+				width: 100%;
+				padding: 25px 10px;
+
+				margin-left: 0;
+				text-align: center;
+			}
+
+		}
+	}
+
+
+	.team {
+		.titleTeam {
+			width: 100%;
+
+			.title {
+				margin: 20px auto 110px;
+
 			}
 		}
 
+		.blockYellow {
+			padding: 15px 0;
+
+			.team__block {
+				width: 100%;
+
+				ul {
+
+					flex-wrap: wrap;
+
+
+					li {
+						width: 50%;
+						margin: 10px auto;
+
+					}
+				}
+			}
+		}
 	}
 }
+
 
 
 @media (min-width: 200px) and (max-width: 767.98px) {
@@ -319,68 +381,69 @@
 		}
 	}
 
-	main {
+
+
+
+	.section1 {
 		@include wrap();
 		font-family: 'Roboto',
 			sans-serif;
+		text-align: center;
 
-		.mainSection1 {
+		.title {
+			margin: 25px 0 20px;
+
+			@include none();
+
+		}
+
+	}
+
+	.section1__block {
+		@include wrap();
+		margin-top: 0px;
+
+		.blockImg {
+			width: 100%;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.blockText {
+			width: 100%;
 			text-align: center;
+			padding: 0 8px;
+			;
 
-			.title {
-				margin: 25px 0 20px;
+			h3 {
 
-				@include none();
-
+				margin: 20px 0;
 			}
 
-		}
+			a {
+				@include a();
+				@include btn();
+				margin-bottom: 27px;
 
-		.mainSection1__block {
-			@include wrap();
-			margin-top: 0px;
-
-			.blockImg {
-				width: 100%;
-
-				img {
-					width: 100%;
-					height: auto;
-				}
-			}
-
-			.blockText {
-				width: 100%;
-				text-align: center;
-				padding: 0 8px;
-				;
-
-				h3 {
-
-					margin: 20px 0;
-				}
-
-				a {
-					@include a();
-					@include btn();
-					margin-bottom: 27px;
-
-				}
-			}
-		}
-
-		.mainSection1__block+.mainSection1__block {
-			.blockText {
-				padding: 0 8px;
-			}
-		}
-
-		.mainSection1__block+.mainSection1__block+.mainSection1__block {
-			.blockText {
-				padding: 0 8px;
 			}
 		}
 	}
+
+	.section1__block+.section1__block {
+		.blockText {
+			padding: 0 8px;
+		}
+	}
+
+	.section1__block+.section1__block+.section1__block {
+		.blockText {
+			padding: 0 8px;
+		}
+	}
+
 
 
 	.sectionContent {
@@ -475,5 +538,83 @@
 			}
 		}
 
+	}
+
+	.sectionPrice+.sectionContent {
+		display: block;
+
+		.sectionHistory {
+			@include wrap();
+			padding: 25px 10px;
+
+			.sectionHistory__bloc {
+				width: 100%;
+				padding: 10px;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			.sectionHistory__block2 {
+				width: 100%;
+				margin-left: 0;
+
+			}
+
+		}
+	}
+
+	.team {
+		.titleTeam {
+			@include wrap();
+
+			.title {
+				margin: 20px auto 30px;
+				@include none();
+			}
+		}
+
+		.blockYellow {
+			padding: 15px 0;
+
+			.team__block {
+				@include wrap();
+
+				ul {
+
+					flex-wrap: wrap;
+
+
+					li {
+						width: 100%;
+						margin-top: 20px;
+
+					}
+				}
+			}
+		}
+	}
+
+	.team+.section1 {
+		width: 100%;
+
+		.section1__block .title {
+			@include none();
+		}
+
+		.blockText {
+			width: 100%;
+			padding: 0 17px 0 0;
+
+			p {
+				line-height: 28px;
+			}
+		}
+
+		.blockImg {
+			width: 100%;
+		}
 	}
 }

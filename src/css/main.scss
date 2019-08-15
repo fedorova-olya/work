@@ -155,29 +155,28 @@ body {
     }
 }
 
-main {
+
+
+.section1 {
     @include wrapper();
     display: block;
+    text-align: center;
 
+    .title {
+        @include title();
 
-    .mainSection1 {
-        text-align: center;
-
-        .title {
-            @include title();
-
-            &:before {
-                @include titleBefore();
-            }
-
-            &::after {
-                @include titleAfter();
-            }
+        &:before {
+            @include titleBefore();
         }
 
+        &::after {
+            @include titleAfter();
+        }
     }
 
-    .mainSection1__block {
+
+
+    .section1__block {
         display: flex;
         justify-content: space-between;
         margin-bottom: 220px;
@@ -206,6 +205,7 @@ main {
 
             p {
                 line-height: 23px;
+                font-size: 16px;
             }
 
             a {
@@ -215,14 +215,14 @@ main {
         }
     }
 
-    .mainSection1__block+.mainSection1__block {
+    .section1__block+.section1__block {
         .blockText {
             padding: 0 97px 0 0;
             order: -1;
         }
     }
 
-    .mainSection1__block+.mainSection1__block+.mainSection1__block {
+    .section1__block+.section1__block+.section1__block {
         .blockText {
             padding: 0 0 0 97px;
             order: 1;
@@ -275,21 +275,7 @@ main {
     display: block;
     text-align: center;
 
-    .title {
-        text-align: center;
-        @include title();
-        margin: 90px 0 130px;
-        padding: 12px 78px;
-
-
-        &:before {
-            @include titleBefore();
-        }
-
-        &::after {
-            @include titleAfter();
-        }
-    }
+    @include title_before_after_right();
 
     .sectionFeatures__block {
         @include wrapper();
@@ -594,5 +580,82 @@ main {
             color: #3a3a3a;
         }
     }
+
+}
+
+.team {
+    text-align: center;
+
+    .titleTeam {
+        @include wrapper();
+        @include title_before_after_right();
+    }
+
+    .blockYellow {
+        padding: 40px 0;
+
+        .team__block {
+            @include wrapper();
+            color: #f5f5f5;
+
+            ul {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                li {
+                    img {
+                        width: 125px;
+                        height: 125px;
+                        background: #b3b3b3;
+                        border-radius: 50%;
+                    }
+
+                    h6 {
+                        font-size: 16px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        margin: 18px 0 10px;
+
+                    }
+
+                    span {
+                        font-size: 16px;
+                        font-weight: 400;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.team+.section1 {
+    .title {
+        &:before {
+            @include titleBefore();
+            right: 0;
+            left: -82px;
+            transform: rotateY(178deg);
+        }
+
+        &::after {
+            @include titleAfter();
+            right: 0;
+            left: -24px;
+            transform: rotate3d(0, 0, 0, 0deg);
+
+        }
+    }
+
+    .blockText {
+        padding: 0 17px 0 0;
+
+        p {
+            line-height: 28px;
+        }
+    }
+
 
 }
