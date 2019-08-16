@@ -659,3 +659,86 @@ body {
 
 
 }
+
+.hire_us {
+    display: flex;
+    flex-direction: column-reverse;
+    min-height: 400px;
+    background: url('../../build/img/baner_footr.jpg') 0 0/ cover;
+    position: relative;
+
+    &::before {
+        content: "";
+        background: rgba(255, 192, 56, .5);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .blockYellow {
+        padding: 10px 0 17px;
+        position: relative;
+
+        .hire_us__block {
+            @include wrapper();
+            align-items: baseline;
+
+            span {
+                color: #fff;
+                font-size: 22px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            a {
+                @include a();
+                @include btn();
+                background: #fff;
+                font-size: 20px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #3a3a3a;
+                padding: 14px 42px;
+            }
+        }
+    }
+}
+
+footer {
+    background: #363636;
+
+    .footer {
+        width: 993px;
+        margin: 0 auto;
+    }
+
+    ul.footer_blockUl {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+
+        li {
+            margin: 45px 120px 45px 0;
+
+            a {
+                @include a();
+                color: #e6e9ed;
+                font-weight: 500;
+            }
+
+            ul.footer_blockUl_ul {
+                li {
+                    margin: 25px 0;
+
+                    a {
+                        font-weight: 400;
+                        font-size: 16px;
+                        color: #aab2bd;
+                    }
+                }
+            }
+        }
+    }
+}
